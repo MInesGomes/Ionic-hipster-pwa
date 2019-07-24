@@ -1,0 +1,13 @@
+<app-nms-header title="{{ 'TAB2_TITLE' | translate }}"></app-nms-header>
+
+<ion-content padding>
+  <ion-list>
+      <ion-item *ngFor="let entity of entities" (click)="openPage(entity)">
+        <h2>{{entity.name}}</h2>
+      </ion-item>
+  </ion-list>
+
+  <div *ngIf="entities.length === 0">
+    {{ 'EMPTY_ENTITIES_MESSAGE' | translate }}
+  </div>
+</ion-content>

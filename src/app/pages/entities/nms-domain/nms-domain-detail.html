@@ -1,0 +1,154 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            Nms Domain
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label position="fixed">Name</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.name}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Latitude</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.latitude}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Longitude</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.longitude}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Address</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.address}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Domain Email</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.domainEmail}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Tag</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.tag}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Description</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.description}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Notes</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.notes}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Domain</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.domain}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Self Admin</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.selfAdmin}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Time Zone</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.timeZone}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Ip Api</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.ipApi}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Ip Cancel</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.ipCancel}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Login Extension</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.loginExtension}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Email Welcome</ion-label>
+            <div item-content>
+                <div *ngIf="nmsDomain.emailWelcome">
+                    <a (click)="openFile(nmsDomain.emailWelcomeContentType, nmsDomain.emailWelcome)" jhiTranslate="entity.action.open">open</a>
+                    {{nmsDomain.emailWelcomeContentType}}, {{byteSize(nmsDomain.emailWelcome)}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Email Renew Password</ion-label>
+            <div item-content>
+                <div *ngIf="nmsDomain.emailRenewPassword">
+                    <a (click)="openFile(nmsDomain.emailRenewPasswordContentType, nmsDomain.emailRenewPassword)" jhiTranslate="entity.action.open">open</a>
+                    {{nmsDomain.emailRenewPasswordContentType}}, {{byteSize(nmsDomain.emailRenewPassword)}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Email Access To Patient</ion-label>
+            <div item-content>
+                <div *ngIf="nmsDomain.emailAccessToPatient">
+                    <a (click)="openFile(nmsDomain.emailAccessToPatientContentType, nmsDomain.emailAccessToPatient)" jhiTranslate="entity.action.open">open</a>
+                    {{nmsDomain.emailAccessToPatientContentType}}, {{byteSize(nmsDomain.emailAccessToPatient)}}
+                </div>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Sip Enabled</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.sipEnabled}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Active</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.active}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Last Modified Date</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.lastModifiedDate | date:'medium'}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Last Modified By</ion-label>
+            <div item-content>
+                <span>{{nmsDomain.lastModifiedBy}}</span>
+            </div>
+        </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" color="primary" (click)="open(nmsDomain)">{{ 'EDIT_BUTTON' | translate }}</ion-button>
+    <ion-button expand="block" color="danger" (click)="deleteModal(nmsDomain)">{{ 'DELETE_BUTTON' | translate }}</ion-button>
+
+</ion-content>

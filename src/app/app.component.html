@@ -1,0 +1,29 @@
+<ion-app>
+  <ion-split-pane>
+    <!-- style="max-width: 220px;" -->
+    <ion-menu (ionWillOpen)="menuClicked()">
+      <ion-header>
+        <ion-toolbar class='menuHeader'>
+          <div class='icon' float-left></div>
+          <b> &nbsp; Hispter Ionic</b>
+        </ion-toolbar>
+
+      </ion-header>
+
+      <ion-content text-center>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i=index">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" (click)="pageClicked(i)"
+              [ngClass]=" p?.selec ? 'selectedMenuItem' : ''">
+              <ion-icon slot="start" color='primary' [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

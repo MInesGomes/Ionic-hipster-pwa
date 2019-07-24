@@ -1,0 +1,151 @@
+
+        <app-nms-header title='Domains'></app-nms-header>
+
+<!-- todo: add elasticsearch support -->
+<ion-content padding>
+    <ion-refresher [disabled]="plt.is('desktop')" slot="fixed" (ionRefresh)="loadAll($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <div class="overflowX" *ngIf="nmsDomains?.length > 0">
+        <table>
+            <thead>
+                <tr>
+                    <th><span>ID</span>
+                        <ion-icon name="arrow-up" (click)="loadAll('id', true)"></ion-icon>
+                        <ion-icon name="arrow-down" (click)="loadAll('id', false)"></ion-icon>
+                    </th>
+                    <th><span>Name</span>
+                        <ion-icon name="arrow-up" (click)="loadAll('name', true)"></ion-icon>
+                        <ion-icon name="arrow-down" (click)="loadAll('name', false)"></ion-icon>
+                    </th>
+                    <!-- <th jhiSortBy="latitude"><span>Latitude</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="longitude"><span>Longitude</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="address"><span>Address</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th> -->
+                    <th>Domain Email
+                        <ion-icon name="arrow-up" (click)="loadAll('domainEmail', true)"></ion-icon>
+                        <ion-icon name="arrow-down" (click)="loadAll('domainEmail', false)"></ion-icon>
+                    </th>
+                    <!-- <th jhiSortBy="tag"><span>Tag</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="description"><span>Description</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="notes"><span>Notes</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="domain"><span>Domain</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="selfAdmin"><span>Self Admin</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="timeZone"><span>Time Zone</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="ipApi"><span>Ip Api</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="ipCancel"><span>Ip Cancel</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="loginExtension"><span>Login Extension</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th> -->
+                    <th jhiSortBy="emailWelcome"><span>Email Welcome</span>
+                    </th>
+                    <!-- <th jhiSortBy="emailRenewPassword"><span>Email Renew Password</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="emailAccessToPatient"><span>Email Access To Patient</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="sipEnabled"><span>Sip Enabled</span>
+                        <ion-icon name="arrow-down"></ion-icon>
+                    </th>
+                    <th jhiSortBy="active"><span>Active</span>
+                        <ion-icon name="arrow-down"></ion-icon> 
+                    </th>
+                     <th jhiSortBy="lastModifiedDate"><span>Last Modified Date</span> <ion-icon name="arrow-down"></ion-icon></th>
+                     <th jhiSortBy="lastModifiedBy"><span>Last Modified By</span> <ion-icon name="arrow-down"></ion-icon></th> -->
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <div class='.overflowY'> -->
+                <!-- <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0"> -->
+                <tr *ngFor="let nmsDomain of nmsDomains ;trackBy: trackId" #slidingItem>
+                    <td><a [routerLink]="['/nms-domain', nmsDomain?.id, 'view' ]">{{nmsDomain?.id}}</a></td>
+                    <td>{{nmsDomain?.name}}</td>
+                    <!-- <td>{{nmsDomain?.latitude}}</td>
+                    <td>{{nmsDomain?.longitude}}</td>
+                    <td>{{nmsDomain?.address}}</td> -->
+                    <td>{{nmsDomain?.domainEmail}}</td>
+                    <!-- <td>{{nmsDomain?.tag}}</td>
+                    <td>{{nmsDomain?.description}}</td>
+                    <td>{{nmsDomain?.notes}}</td>
+                    <td>{{nmsDomain?.domain}}</td>
+                    <td>{{nmsDomain?.selfAdmin}}</td>
+                    <td>{{nmsDomain?.timeZone}}</td>
+                    <td>{{nmsDomain?.ipApi}}</td>
+                    <td>{{nmsDomain?.ipCancel}}</td>
+                    <td>{{nmsDomain?.loginExtension}}</td> 
+                    <td>
+                        <a *ngIf="nmsDomain?.emailWelcome"
+                            (click)="openFile(nmsDomain?.emailWelcomeContentType, nmsDomain?.emailWelcome)">open</a>
+                        <span *ngIf="nmsDomain?.emailWelcome">{{nmsDomain?.emailWelcomeContentType}},
+                            {{byteSize(nmsDomain?.emailWelcome)}}</span>
+                    </td>-->
+                    <td>
+                        <a *ngIf="nmsDomain?.emailRenewPassword"
+                            (click)="openFile(nmsDomain?.emailRenewPasswordContentType, nmsDomain?.emailRenewPassword)">open</a>
+                        <span *ngIf="nmsDomain?.emailRenewPassword">{{nmsDomain?.emailRenewPasswordContentType}},
+                            {{byteSize(nmsDomain?.emailRenewPassword)}}</span>
+                    </td>
+                    <!--   <td>
+                        <a *ngIf="nmsDomain?.emailAccessToPatient"
+                            (click)="openFile(nmsDomain?.emailAccessToPatientContentType, nmsDomain?.emailAccessToPatient)">open</a>
+                        <span *ngIf="nmsDomain?.emailAccessToPatient">{{nmsDomain?.emailAccessToPatientContentType}},
+                            {{byteSize(nmsDomain?.emailAccessToPatient)}}</span>
+                    </td> 
+                    <td>{{nmsDomain?.sipEnabled}}</td>
+                    <td>{{nmsDomain?.active}}</td>
+                     <td>{{nmsDomain?.lastModifiedDate | date:'medium'}}</td>
+                <td>{{nmsDomain?.lastModifiedBy}}</td> -->
+
+                    <td>
+                        <ion-button size='small' color="primary" (click)="edit( nmsDomain)">
+                            <ion-icon slot="start" name="create"> </ion-icon>
+                            {{ 'EDIT_BUTTON' | translate }}
+                        </ion-button>
+                        <!-- <ion-button color="danger" (click)="inactive(nmsDomain)">
+                            <ion-icon slot="start" name="trash"> </ion-icon>
+                            {{ 'DELETE_BUTTON' | translate }}
+                        </ion-button> -->
+                    </td>
+                </tr>
+                <!-- </div> -->
+            </tbody>
+        </table>
+    </div>
+
+    <ion-item *ngIf="!nmsDomains?.length">
+        <ion-label>
+            No Nms Domains found.
+        </ion-label>
+    </ion-item>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="new()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

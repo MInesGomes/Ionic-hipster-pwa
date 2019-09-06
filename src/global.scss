@@ -20,35 +20,14 @@
     overflow-x: scroll;
 }
 
-// Table ===
-table {
-  width: 98%;
-  margin: 10px;
-  // border-collapse: collapse; 
-  border: 2px solid rgb(183, 184, 185);
-}
-
-/* Zebra striping */
-tr:nth-of-type(even) {
-  background: rgb(247, 247, 247);
-  border: 1px solid rgb(255, 255, 255);
-}
-
-tr:nth-of-type(odd) {
-  background: rgb(255, 255, 255);
-  border: 1px solid rgb(255, 255, 255);
-}
-
-th {
-  background: rgb(235, 240, 248);
-  border: 1px solid rgb(255, 255, 255);
-  color: rgb(128, 125, 125);
-  font-weight: normal;
-}
-
-td {
-  padding: 6px;
-  text-align: left;
+.icon {
+  width: 42px;
+  height: 40px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  border-radius: 0%;
+  background: url("./assets/img/ionicjhispter.png") no-repeat;
+  background-size: 100%;
 }
 
 .button {

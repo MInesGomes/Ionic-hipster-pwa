@@ -12,7 +12,6 @@ import { NavController } from '@ionic/angular';
 export class NmsHeaderComponent implements OnInit {
 
   languages: any[];
-  // public title = '';
   @Input() title: string;
   constructor(
     public loginService: LoginService,

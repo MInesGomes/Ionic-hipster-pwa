@@ -5,3 +5,56 @@
   color: red;
   font-size: 16px;
 }
+
+
+ion-item {
+  border-radius: 3px;
+  border: 1px solid rgb(197, 208, 241);
+  margin: 2px;
+  padding: 2px;
+}
+
+.overflowY {
+  max-width: 85%;
+  overflow-y: scroll;
+}
+
+.overflowX {
+  max-height: 95%;
+  overflow-x: scroll;
+}
+
+// Table ===
+table {
+  width: 98%;
+  margin: 10px;
+  // border-collapse: collapse; 
+  border: 2px solid rgb(183, 184, 185);
+}
+
+/* Zebra striping */
+tr:nth-of-type(even) {
+  background: rgb(247, 247, 247);
+  border: 1px solid rgb(255, 255, 255);
+}
+
+tr:nth-of-type(odd) {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+}
+
+th {
+  background: rgb(235, 240, 248);
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(128, 125, 125);
+  font-weight: normal;
+}
+
+td {
+  padding: 6px;
+  text-align: left;
+}
+
+.button {
+    text-transform: none;
+  }

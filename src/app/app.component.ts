@@ -8,7 +8,8 @@ import { AccountService } from './services/auth/account.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
+  styleUrls: ['./app.scss'],
 })
 export class AppComponent {
   public appPages;

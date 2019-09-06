@@ -1,11 +1,17 @@
 
-<ion-toolbar>
-  <div class='icon hidden-lg-up' float-left></div>
-  <ion-menu-button no-padding float-left></ion-menu-button>
-  <b>&nbsp;{{title }}</b>
+
+  <ion-item class="ion-no-margin ion-no-padding">
+    &nbsp;
+    <div class='icon hidden-lg-up'></div>
+    <ion-menu-button ></ion-menu-button>
+    <div class='hidden-md-down'>&nbsp;&nbsp;</div>
+    <div class='bgTxt' *ngIf="title"> <b>{{title}}</b> </div>
+    <div class='smTxt hidden-lg-up' *ngIf="!title"> <b>Y</b>our <b>A</b>pp <b>T</b>itle </div>
+    <div class='bgTxt hidden-md-down' *ngIf="!title"> <b>Y</b>our <b>A</b>pp <b>T</b>itle </div>
   
-  <ion-button size='small' float-right (click)="logout()" id="logout">
-      <ion-icon slot='start' name="log-out"></ion-icon>
-      LOGOUT
-    </ion-button>
-</ion-toolbar>
+    <ion-button class='ion-no-margin' size='small' slot='end' (click)="logout()" id="logout">
+        <ion-icon slot='start' name="log-out"></ion-icon>
+        &nbsp;LOGOUT
+      </ion-button>
+    </ion-item>
+  

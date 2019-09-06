@@ -1,6 +1,17 @@
-ion-toolbar {
-    color: var(--ion-color-light);
-    --ion-background-color: linear-gradient(135deg,rgb(12, 96, 221),  rgb(219, 228, 243)) !important;
+ion-item {
+    color: #ffffff;
+    --ion-background-color: linear-gradient(135deg, rgb(12, 96, 221), rgb(219, 228, 243)) !important;
+    // text-align: left;
+  }
+  
+  .smTxt {
+    font-size: 82%;
+  //   font-stretch: ultra-condensed;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .bgTxt {
     font-size: 120%;
-    text-align: left;
-}
+  }
+  

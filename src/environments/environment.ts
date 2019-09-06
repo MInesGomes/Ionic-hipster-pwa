@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-
   apiUrl: 'http://localhost:8080/api',
+  ITEMS_PER_PAGE: 10
 };
 
 

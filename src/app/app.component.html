@@ -1,13 +1,12 @@
 <ion-app>
   <ion-split-pane>
     <!-- style="max-width: 220px;" -->
-    <ion-menu (ionWillOpen)="menuClicked()">
+    <ion-menu (ionWillOpen)="menuClicked()" >
       <ion-header>
-        <ion-toolbar class='menuHeader'>
-          <div class='icon' float-left></div>
-          <b> &nbsp; Hispter Ionic</b>
-        </ion-toolbar>
-
+          <ion-item class ='menuHd' style="max-height: 50px;">
+              <div class='icon' ></div>
+              <div text-center> <b> &nbsp; Hispter Ionic</b> </div>
+            </ion-item>
       </ion-header>
 
       <ion-content text-center>
